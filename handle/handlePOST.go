@@ -10,6 +10,7 @@ import (
 
 var mimeTypes = map[string]string{
 	"image/png": ".png",
+	"image/gif": ".gif",
 	"video/mp4": ".mp4",
 }
 

@@ -11,5 +11,9 @@ func HandleGET(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
+	if path == "/" {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
 	http.ServeFile(w, r, "files"+path)
 }

@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"uploader/handle"
 	"uploader/server"
+	"time"
+	"math/rand"
 
 	"github.com/joho/godotenv"
 )
@@ -14,6 +16,7 @@ var (
 )
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
 	godotenv.Load(".env")
 	fmt.Println("Listening on port " + PORT)
 	server.CreateServer(PORT)

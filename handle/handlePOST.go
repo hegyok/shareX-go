@@ -37,7 +37,7 @@ func HandlePOST(w http.ResponseWriter, r *http.Request) {
 	ioutil.WriteFile("files/"+random+ext, data, 0644)
 	var response = map[string]string{
 		"filename": random + ext,
-		ext:        ext,
+		"ext":        ext,
 	}
 	res, _ := json.Marshal(response)
 	w.Write(res)
